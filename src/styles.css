@@ -1,1 +1,26 @@
-/* You can add global styles to this file, and also import other style files */
+
+/*sería el elemento que contiene todo*/
+#content{
+	margin-top: 15px; /*margen de arriba*/
+	background: white;
+
+	border: 1px solid #eee; /*dibuja un borde en el elemento*/
+	border-radius: 2px; /*dedondea los bordes*/
+	box-shadow: 0px 2px 5px #ccc; /*efecto de sombrita que se le agrega al box*/
+
+	padding: 0px; /*espacion desde el borde hasta que inicia el contenido*/
+	overflow: hidden; /* se refiere a si aparece la barrita de desplazamiento cuando el contenido no entra en la pantalla  https://www.w3schools.com/css/css_overflow.asp*/
+}
+
+/*encabezado. hasta ahora solo el nombre de la empresa*/
+#header{
+	background: #DDD64F;
+	margin: 0px;
+	height: 60px;
+	line-height: 90px
+}
+
+#header h1{
+	line-height: 45px;
+	display: block;
+}
