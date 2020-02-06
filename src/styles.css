@@ -16,11 +16,50 @@
 #header{
 	background: #DDD64F;
 	margin: 0px;
-	height: 60px;
+	height: 90px;
 	line-height: 90px
 }
 
 #header h1{
 	line-height: 45px;
 	display: block;
+}
+
+#nav{
+	margin: 0px;
+	padding: 0px;
+	background: #F3E709;
+	
+}
+
+#nav ul{
+	list-style: none;
+	padding-left: 20px;
+}
+
+#nav ul li{
+	float: left;
+	margin-right: 20px;
+}
+
+#nav a{
+	color: black;
+	height: 40px;
+	display: block;
+	line-height: 40px;
+	padding-left: 10px;
+	transition: all 300ms;
+}
+
+#nav ul li a:hover{
+	text-decoration: none;
+	background: #DDD64F;
+	border-radius: 6px;
+}
+
+#footer{
+	margin-top: 50px;
+	border-top: 1px solid #ccc;
+	padding-top: 10px;
+	color: gray;
 }
