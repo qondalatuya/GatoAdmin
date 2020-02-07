@@ -63,3 +63,8 @@
 	padding-top: 10px;
 	color: gray;
 }
+
+#main .jumbotron{
+	padding: 50px;
+	margin-top: 30px;
+}
