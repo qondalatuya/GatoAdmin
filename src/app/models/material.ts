@@ -1,9 +1,9 @@
 export class Material{
 	constructor(
-		nombre:String,
-		tipo:String,
-		existencia: number,
-		precioUnidad: number
+		public nombre:String,
+		public tipo:String,
+		public existencia: number,
+		public precioUnidad: number
 		){
 	}
 }
