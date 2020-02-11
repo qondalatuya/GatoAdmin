@@ -1,4 +1,4 @@
 export var GLOBAL={
-	apiUrl:"https://jsonplaceholder.typicode.com/comments",
+	apiUrl:"http://localhost:49972/api/",
 	url2:"xvideos.com"
 }

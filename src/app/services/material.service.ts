@@ -20,7 +20,7 @@ export class MaterialService{
 	}
 
 	getMateriales():Observable<any>{
-		return(this._http.get(this.url));
+		return(this._http.get(this.url+"materiales"));
 	}
 
 }

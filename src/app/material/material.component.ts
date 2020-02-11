@@ -21,10 +21,8 @@ export class MaterialComponent{
 	}
 
 	ngOnInit(){
-		console.log(this._materialService.getMateriales());
 		this._materialService.getMateriales().subscribe(
 			result =>{
-				console.log(result);
 				this.materiales=result;
 				console.log(this.materiales);
 			},

@@ -1,1 +1,18 @@
-<h1>component material</h1>
+<h2>Listado de materiales</h2>
+<hr>
+
+<table class="table table-bordered" >
+	<thead>
+		<tr>
+			<th> Nombre</th>
+			<th> Cantidad</th>
+		</tr>
+	</thead>
+	<tbody *ngFor="let material of materiales">
+		<tr>
+			<td>{{material.nombre}}</td>
+			<td>{{material.existencia}}</td>
+		</tr>
+	</tbody>
+</table>
+
