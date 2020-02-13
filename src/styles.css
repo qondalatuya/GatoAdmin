@@ -76,3 +76,11 @@
 	padding: 50px;
 	margin-top: 30px;
 }
+
+#materialsTable td{
+	text-align: center;
+}
+
+#materialsTable td button{
+	
+}

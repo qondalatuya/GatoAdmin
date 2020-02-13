@@ -12,12 +12,13 @@ import {HttpClient,HttpClientModule} from "@angular/common/http";
 export class MaterialComponent{
 
 	public materiales:Material[];
+	public nuevoMaterial:Material;
 
 	constructor(
 		private _materialService:MaterialService
 	)
 	{
-		//this.materiales = this._materialService.getClientes();
+		this.nuevoMaterial=new Material(null,null,null,null);
 	}
 
 	ngOnInit(){
@@ -28,6 +29,9 @@ export class MaterialComponent{
 			},
 			error =>{
 				console.log(<any>error);
-			})
+			}
+		)
 	}
+
+	
 }

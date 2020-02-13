@@ -6,4 +6,5 @@ export class Material{
 		public precioUnidad: number
 		){
 	}
+
 }
