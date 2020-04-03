@@ -1,0 +1,16 @@
+
+<p>form-material works!</p>
+<p>{{(materialito$ | async).nombre}}</p>
+
+<label>{{materialito$nomre | async}}</label>
+<ul>
+    <li *ngFor="let material of materiales$ | async">
+        {{material.nombre}}
+    </li>
+</ul>
+
+<div *ngIf="materiales$ | async as materiales">
+    <ul>
+        <li *ngFor="let material of materiales">{{material.nombre}}</li>
+    </ul>
+</div>

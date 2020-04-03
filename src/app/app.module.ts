@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import {FormsModule} from "@angular/forms";
 
 import {HttpClientModule} from '@angular/common/http';
 
@@ -10,8 +11,7 @@ import {MaterialComponent} from "@app/material/material.component";
 
 import {moduloRouting,appRoutingProviders} from "../app.routing";
 import {MaterialService} from "@services/material.service";
-
-
+import { FormMaterialComponent } from './material/form-material/form-material.component';
 
 
 @NgModule({
@@ -19,14 +19,16 @@ import {MaterialService} from "@services/material.service";
     AppComponent,
     HomeComponent,
     ErrorComponent,
-    MaterialComponent
+    MaterialComponent,
+    FormMaterialComponent
   ],
   imports: [
     BrowserModule,
     moduloRouting,
+    FormsModule,
     HttpClientModule
   ],
-  providers: [appRoutingProviders],
+  providers: [appRoutingProviders,MaterialService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

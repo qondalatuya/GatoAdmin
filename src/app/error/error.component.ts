@@ -5,5 +5,6 @@ import {Component} from "@angular/core";
 	template:"<h1> La URL no devolvió ningun resultado</h1>"
 })
 export class ErrorComponent{
+	
 
 }
