@@ -1,4 +1,6 @@
 <h2>Listado de materiales</h2>
+
+<button (click)="_materialService.probarEmiter()">probar</button>
 <hr>
 
 <h3 *ngIf="!materiales"> Cargando...</h3>
@@ -49,7 +51,7 @@
       </div>
       
     </div>
-  </div>
+</div>
 
 <div id="materialForm" class="panel panel-default col-xs-6">
   <div class="panel-heading"><h3>Nuevo Material</h3></div>
@@ -75,3 +77,14 @@
   </div>
 </div>
 
+
+
+<div id="materialForm" class="panel panel-default col-xs-6">
+	<div class="panel-heading"><h3>Nuevo Material</h3></div>
+	<div class="panel-body">
+		<app-form-material ></app-form-material>
+	</div>
+</div>
+
+
+  

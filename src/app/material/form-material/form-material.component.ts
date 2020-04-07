@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import {Observable} from "rxjs";
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import {Observable,Subscription} from "rxjs";
+import {Input} from "@angular/core";
 
 
 import {MaterialService} from "@app/services/material.service";
@@ -10,18 +11,33 @@ import { Material } from '@app/models/material';
   selector: 'app-form-material',
   templateUrl: './form-material.component.html'
 })
-export class FormMaterialComponent implements OnInit {
+export class FormMaterialComponent implements OnInit,OnDestroy {
 
-  private materialito$:Observable<Material>;
-  private materiales$ :Observable<Material[]>;
+  public material:Material=new Material(0,null,null,null,null);
+
 
   constructor(
      private _materialService:MaterialService
   ) { }
 
   ngOnInit() {
-    this.materialito$= this._materialService.obtenerMaterial(1);
-    this.materiales$=this._materialService.obtenerMateriales();    
+
+  }
+
+  onSubmit(){
+    this._materialService.guardarMaterial(this.material).subscribe(
+      result=>{
+        this._materialService.avisarMaterialAgregado(result)
+      },
+      error=>{
+
+      }
+      
+    )
+  }
+
+  ngOnDestroy(){
+    
   }
 
 }

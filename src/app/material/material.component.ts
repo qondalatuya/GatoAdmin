@@ -1,4 +1,4 @@
-import {Component} from "@angular/core";
+import {Component, OnDestroy, OnInit} from "@angular/core";
 import {MaterialService} from "@services/material.service";
 import {Material} from "@app/models/material";
 import {HttpClient,HttpClientModule} from "@angular/common/http";
@@ -9,10 +9,13 @@ import {Observable,Subscription} from "rxjs";
 	templateUrl: "./material.component.html"
 })
 
-export class MaterialComponent{
+export class MaterialComponent implements OnInit,OnDestroy{
 
 	public materiales:Material[];
 	public nuevoMaterial:Material;
+
+	private suscripcion:Subscription;
+	
 	
 	
 	constructor(
@@ -23,7 +26,13 @@ export class MaterialComponent{
 	}
 
 	ngOnInit(){
-		
+		this.suscripcion=this._materialService.materialAgregado.subscribe(
+			material=>{
+				this.materiales.push(material);
+			}
+		)
+
+
 		this._materialService.obtenerMateriales().subscribe(
 			result =>{
 				this.materiales=result;
@@ -32,9 +41,11 @@ export class MaterialComponent{
 				console.log(<any>error);
 			}
 		)
+		
 	}
 
 	onSubmit(){
+		console.log(this.nuevoMaterial);
 		this._materialService.guardarMaterial(this.nuevoMaterial).subscribe(
 			result =>{
 				this.materiales.push(result);
@@ -43,10 +54,12 @@ export class MaterialComponent{
 			error =>{
 				console.log(<any> error);
 			}
-		)		
+		)
+		
 	}
 
 	borrar( material:Material){
+		console.log(material);
 		this._materialService.borrarMaterial(material.id).subscribe(
 			result =>{
 				this.ngOnInit();
@@ -55,5 +68,9 @@ export class MaterialComponent{
 				console.log(<any>error);
 			}
 		)		
+	}
+
+	ngOnDestroy(){
+		this.suscripcion.unsubscribe();
 	}
 }
