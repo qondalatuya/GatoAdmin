@@ -4,6 +4,17 @@
         <input id="nombreInput" class="form-control"
             name="nombre" #Nombre="ngModel" [(ngModel)]="material.nombre">
     </div>
+
+    <div class="form-group">
+        <label for="tipoSelect">Seleccione un tipo</label>
+        <select id="tipoSelect" class="form-control"
+            name="tipo" #tipo="ngModel" [(ngModel)]="material.tipo">
+            <option  *ngFor="let tipo of tiposMateriales" [ngValue]="tipo">
+                {{tipo.nombre}}
+            </option>
+        </select>
+    </div>
+
     <div class="form-group">
         <label for="cantidadInicialInput">Cantidad Inicial</label>
         <input id="cantidadInicialInput" class="form-control" type="number" 
@@ -14,5 +25,37 @@
         <input id="precioInput" class="form-control" type="number"
             name="precioUnidad" #precioUnidad="ngModel" [(ngModel)]="material.precioUnidad">
     </div>
+    <!---->
+
+    <div class="form-group">
+        <label for="unidadInput">Unidad de medicion</label>
+        <input id="unidadInput" class="form-control"
+            name="unidad" #unidad="ngModel" [(ngModel)]="material.unidad">
+    </div>
+    <!--
+    <div class="form-group">
+        
+        <label for="unidadInput">Unidad de medicion</label>
+        <label></label>
+        <div class="radio">
+          <label><input type="radio" name="unidad">Kg</label>
+        </div>
+        <div class="radio">
+          <label><input type="radio" name="unidad">gr</label>
+        </div>
+        <div class="radio">
+          <label><input type="radio" name="unidad" >unidad</label>
+        </div>
+        <div class="radio">
+            <label><input type="radio" name="unidad" >litro</label>
+        </div>
+        <div class="radio">
+            <label><input type="radio" name="unidad" >otro</label>
+        </div>
+        <input id="unidadInput" class="form-control"
+            name="unidad" #unidad="ngModel" [(ngModel)]="material.unidad">
+    </div>
+    -->
     <input type="submit" name="guardarMaterialBtn" value="Agregar" class="col-xs-offset-8 btn btn-primary">
 </form>
+

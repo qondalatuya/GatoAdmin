@@ -1,34 +1,27 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {FormsModule} from "@angular/forms";
 
-import {HttpClientModule} from '@angular/common/http';
-
+import { MaterialModule} from "@app/material/material.module";
 import { AppComponent } from './app.component';
 import {HomeComponent} from "./home/home.component";
 import {ErrorComponent} from "@app/error/error.component";
-import {MaterialComponent} from "@app/material/material.component";
 
-import {moduloRouting,appRoutingProviders} from "../app.routing";
 import {MaterialService} from "@services/material.service";
-import { FormMaterialComponent } from './material/form-material/form-material.component';
-
+import {DatafactoryService} from "@services/datafactory.service"
+import { AppRoutingModule } from './app.routing.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    ErrorComponent,
-    MaterialComponent,
-    FormMaterialComponent
+    ErrorComponent
   ],
   imports: [
     BrowserModule,
-    moduloRouting,
-    FormsModule,
-    HttpClientModule
+    MaterialModule,
+    AppRoutingModule
   ],
-  providers: [appRoutingProviders,MaterialService],
+  providers: [MaterialService,DatafactoryService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

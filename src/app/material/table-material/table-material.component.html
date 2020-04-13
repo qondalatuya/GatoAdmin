@@ -1,0 +1,25 @@
+<h3 *ngIf="!materiales"> Cargando...</h3>
+
+<table id= "materialsTable"class="table table-bordered" *ngIf="materiales" >
+	<thead>
+		<tr>
+			<th> Nombre</th>
+			<th> Existencia</th>
+			<th> Acciones</th>
+		</tr>
+	</thead>
+	<tbody >
+		<tr *ngFor="let material of materiales; let i = index">
+			<td>{{material.nombre}}</td>
+			<td>{{material.existencia}}</td>
+			<td id="botonera">
+				<div class="btn-group-xs">
+					<!-- pagina para ver los íconos de bootstrap https://getbootstrap.com/docs/3.3/components/-->
+					<button class="btn glyphicon glyphicon-eye-open"></button>
+					<button class="btn glyphicon glyphicon-pencil" data-toggle="modal" data-target="#myModal"></button>
+					<button class="btn glyphicon glyphicon-trash" (click)="borrar(material)"></button>					
+				</div>
+			</td>
+		</tr>
+	</tbody>
+</table>
